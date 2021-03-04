@@ -27,5 +27,11 @@ int main() {
     cout << "Angka nol"<<endl;
    }
   
+  char pilihan;
+  cout << "\nApakah anda ingin melakukan pengecekan lagi?y/n";cin>>pilihan;
+  if(pilihan =='Y' || pilihan =='y') {
+    goto main;
+  }
+  
   return 0;
 }
