@@ -1,4 +1,5 @@
 #include<iostream>
+#include<limits>
 
 using namespace std;
 
@@ -6,7 +7,15 @@ int main() {
   int angka;
   cout << "Program untuk mengecek bilangan negatif, positif, atau nol" << endl;
   
-  cout << "Masukkan bilangan apa saja : "; cin >> angka;
+  main:
+  cout << "Masukkan bilangan apa saja : ";
+  
+  while(!cin>>angka){
+    cout <<"Tolong masukkan hanya angka!"<<endl;
+    cin.clear();
+    cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
+    goto main;
+  }
   
   if(angka > 0) {
     cout << "Bilangan positif"<<endl;
